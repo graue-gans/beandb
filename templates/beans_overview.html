@@ -4,28 +4,35 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{{ title }}</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
         <link rel="stylesheet" href="/static/style.css" />
     </head>
     <body>
         <header>
-            <h1>☕ {{ site_name }}</h1>
+            <h1>© {{ site_name }}</h1>
             <p>{{ tagline }}</p>
         </header>
 
         <main>
-            <section class="hero">
-                <h2>{{ hero_title }}</h2>
-                <p>{{ hero_description }}</p>
-
-                <div class="actions">
-                    <a href="/coffee" class="btn primary">View My Beans</a>
-                    <a href="/coffee/new" class="btn secondary">Add New Bean</a>
+            <div class="beans-grid">
+                {% for bean_entry in bean_entries %}
+                <div class="beans-entry">
+                    <h4>{{ bean_entry.icon }} {{ bean_entry.title }}</h4>
+                    <p>{{ bean_entry.description }}</p>
                 </div>
-            </section>
+                {% endfor %}
+            </div>
         </main>
 
         <footer>
-            <p>{{ footer_text }} 🚀</p>
+            <p>{{ footer_text }}</p>
         </footer>
     </body>
 </html>

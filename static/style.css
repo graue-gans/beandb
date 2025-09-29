@@ -35,11 +35,46 @@ header h1 {
     /*font-stretch: ultra-condensed;‚*/
 }
 
+header p {
+    color: black;
+    font-size: 2rem;
+    text-align: right;
+}
+
 main {
-    max-width: 800px;
+    /*max-width: 1600px;*/
     margin: 0 auto;
     padding: 0 1rem;
     margin-left: 0;
+}
+
+.beans-overview h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.beans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.beans-entry {
+    text-align: center;
+    padding: 1rem;
+    background: #ff4e2b;
+    border-radius: 2px;
+}
+
+.beans-entry h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.beans-entry p {
+    color: lightgray;
 }
 
 .hero {
