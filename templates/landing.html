@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ title }}</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="/static/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>¤ {{ site_name }}</h1>
+            <!-- ¤©»ƕƨȣẅẝẞͼͷѠ‼⁜₩ℕ↬↪∫λ⌖⌰⌱⑧◍ -->
+        </header>
+
+        <main>
+            <!--<section class="hero">-->
+            <div class="actions">
+                <a href="/beans" class="btn primary">View Beans Database</a>
+                <a href="/beans/new" class="btn secondary">Add New Bean</a>
+            </div>
+            <!--</section>-->
+
+            <!--<section class="features">
+                <h3>What You Can Track</h3>
+                <div class="feature-grid">
+                    {% for feature in features %}
+                    <div class="feature">
+                        <h4>{{ feature.icon }} {{ feature.title }}</h4>
+                        <p>{{ feature.description }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>-->
+        </main>
+
+        <footer>
+            <p>{{ footer_text }}</p>
+        </footer>
+    </body>
+</html>

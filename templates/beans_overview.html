@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="/static/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>☕ {{ site_name }}</h1>
+            <p>{{ tagline }}</p>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>{{ hero_title }}</h2>
+                <p>{{ hero_description }}</p>
+
+                <div class="actions">
+                    <a href="/coffee" class="btn primary">View My Beans</a>
+                    <a href="/coffee/new" class="btn secondary">Add New Bean</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>{{ footer_text }} 🚀</p>
+        </footer>
+    </body>
+</html>

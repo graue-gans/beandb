@@ -1,0 +1,14 @@
+[package]
+name = "coffeedb"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+askama = "0.14.0"
+axum = "0.8.4"
+duckdb = "1.4.0"
+hyper = "1.7.0"
+serde = { version = "1.0.227", features = ["derive"] }
+tokio = { version = "1.47.1", features = ["full"] }
+tower = "0.5.2"
+tower-http = { version = "0.6.6", features = ["fs"] }
