@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ title }}</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="/static/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>↬ {{ site_name }}</h1>
+            <p>{{ tagline }}</p>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <form method="post" action="/coffee/new">
+                    <!-- Basic Info -->
+                    <h3>Basic Information</h3>
+
+                    <div class="form-group">
+                        <label for="name">Coffee Name *</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            placeholder="e.g., Ethiopian Sidamo"
+                        />
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <input
+                                type="text"
+                                id="country"
+                                name="country"
+                                required
+                                placeholder="e.g., Ethiopia"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="region">Region *</label>
+                            <input
+                                type="text"
+                                id="region"
+                                name="region"
+                                required
+                                placeholder="e.g., Sidamo Province"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="variety">Variety *</label>
+                            <input
+                                type="text"
+                                id="variety"
+                                name="variety"
+                                required
+                                placeholder="e.g., Heirloom"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="process">Process *</label>
+                            <input
+                                type="text"
+                                id="process"
+                                name="process"
+                                required
+                                placeholder="e.g., Washed, Natural"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="roaster">Roaster *</label>
+                            <input
+                                type="text"
+                                id="roaster"
+                                name="roaster"
+                                required
+                                placeholder="e.g., Blue Bottle Coffee"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="roast_level">Roast Level *</label>
+                            <select
+                                id="roast_level"
+                                name="roast_level"
+                                required
+                            >
+                                <option value="">Select roast level</option>
+                                <option value="VeryLight">Very Light</option>
+                                <option value="Light">Light</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Dark">Dark</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="flavor_profile">Flavor Profile *</label>
+                        <input
+                            type="text"
+                            id="flavor_profile"
+                            name="flavor_profile"
+                            required
+                            placeholder="e.g., Floral, Citrus, Berry"
+                        />
+                    </div>
+
+                    <!-- Purchase Info -->
+                    <h3>Purchase Details</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="purchase_date">Purchase Date *</label>
+                            <input
+                                type="date"
+                                id="purchase_date"
+                                name="purchase_date"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bought_at">Bought At *</label>
+                            <input
+                                type="text"
+                                id="bought_at"
+                                name="bought_at"
+                                required
+                                placeholder="e.g., Local Coffee Shop"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="price">Price (€) *</label>
+                            <input
+                                type="number"
+                                id="price"
+                                name="price"
+                                step="0.01"
+                                min="0"
+                                required
+                                placeholder="12.50"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="weight">Weight (grams) *</label>
+                            <input
+                                type="number"
+                                id="weight"
+                                name="weight"
+                                min="0"
+                                required
+                                placeholder="250"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Brewing Info -->
+                    <h3>Brewing Method</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="brewing_method">Method *</label>
+                            <input
+                                type="text"
+                                id="brewing_method"
+                                name="brewing_method"
+                                required
+                                placeholder="e.g., V60, Aeropress"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="grind_size">Grind Size *</label>
+                            <input
+                                type="text"
+                                id="grind_size"
+                                name="grind_size"
+                                required
+                                placeholder="e.g., Medium-fine"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="brewing_ratio">Brewing Ratio *</label>
+                        <input
+                            type="text"
+                            id="brewing_ratio"
+                            name="brewing_ratio"
+                            required
+                            placeholder="e.g., 1:15 or 15g:225ml"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="brewing_rating"
+                            >Brewing Rating (1-10) *</label
+                        >
+                        <input
+                            type="number"
+                            id="brewing_rating"
+                            name="brewing_rating"
+                            min="1"
+                            max="10"
+                            required
+                            placeholder="8"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="brewing_notes">Brewing Notes *</label>
+                        <textarea
+                            id="brewing_notes"
+                            name="brewing_notes"
+                            rows="3"
+                            required
+                            placeholder="How did it taste? Any adjustments needed?"
+                        ></textarea>
+                    </div>
+
+                    <!-- Overall Rating & Notes -->
+                    <h3>Overall Evaluation</h3>
+
+                    <div class="form-group">
+                        <label for="rating">Overall Rating (1-10) *</label>
+                        <input
+                            type="number"
+                            id="rating"
+                            name="rating"
+                            min="1"
+                            max="10"
+                            required
+                            placeholder="9"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Tasting Notes *</label>
+                        <textarea
+                            id="notes"
+                            name="notes"
+                            rows="4"
+                            required
+                            placeholder="Flavor profile, aroma, body, finish..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary">
+                            Add Coffee
+                        </button>
+                        <a href="/" class="btn secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <p>{{ footer_text }}</p>
+        </footer>
+    </body>
+</html>

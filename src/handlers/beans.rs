@@ -12,6 +12,15 @@ struct BeansOverviewTemplate {
     footer_text: String,
 }
 
+#[derive(Template)]
+#[template(path = "beans_add.html")]
+struct BeansAddTemplate {
+    title: String,
+    site_name: String,
+    tagline: String,
+    footer_text: String,
+}
+
 struct BeanEntry {
     icon: String,
     title: String,
@@ -38,7 +47,7 @@ pub async fn view_beans() -> Response {
     ];
 
     let template = BeansOverviewTemplate {
-        title: "bean db".to_string(),
+        title: "bean db - overview".to_string(),
         site_name: "BEANDB".to_string(),
         tagline: "View all registered beans".to_string(),
         bean_entries,
@@ -51,16 +60,16 @@ pub async fn view_beans() -> Response {
     }
 }
 
-// pub async fn add_bean() -> Response {
-//     let template = BeansOverviewTemplate {
-//         title: "bean db".to_string(),
-//         site_name: "BEANDB".to_string(),
-//         tagline: "Track your coffee journey, one bean at a time".to_string(),
-//         footer_text: "» BeanDB by Max Kehrer".to_string(),
-//     };
+pub async fn add_beans() -> Response {
+    let template = BeansAddTemplate {
+        title: "bean db - add".to_string(),
+        site_name: "BEANDB".to_string(),
+        tagline: "Add new bean to database".to_string(),
+        footer_text: "» BeanDB by Max Kehrer".to_string(),
+    };
 
-//     match template.render() {
-//         Ok(html) => Html(html).into_response(),
-//         Err(_) => (StatusCode::INTERNAL_SERVER_ERROR, "Template error").into_response(),
-//     }
-// }
+    match template.render() {
+        Ok(html) => Html(html).into_response(),
+        Err(_) => (StatusCode::INTERNAL_SERVER_ERROR, "Template error").into_response(),
+    }
+}
