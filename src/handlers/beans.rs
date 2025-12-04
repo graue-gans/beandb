@@ -86,7 +86,7 @@ pub async fn view_beans(State(db): State<Arc<Database>>) -> Response {
         site_name: "BEANDB".to_string(),
         tagline: "View all registered beans".to_string(),
         bean_entries,
-        footer_text: "» BeanDB by Max Kehrer".to_string(),
+        footer_text: "» about beandb".to_string(),
     };
 
     match template.render() {
@@ -103,7 +103,7 @@ pub async fn add_beans() -> Response {
         title: "bean db - add".to_string(),
         site_name: "BEANDB".to_string(),
         tagline: "Add new bean to database".to_string(),
-        footer_text: "» BeanDB by Max Kehrer".to_string(),
+        footer_text: "» about beandb".to_string(),
     };
 
     match template.render() {
