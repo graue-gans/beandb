@@ -6,8 +6,8 @@ edition = "2021"
 [dependencies]
 askama = "0.14.0"
 axum = "0.8.4"
-duckdb = "1.4.0"
 hyper = "1.7.0"
+rusqlite = { version = "0.37.0", features = ["bundled"] }
 serde = { version = "1.0.227", features = ["derive"] }
 tokio = { version = "1.47.1", features = ["full"] }
 tower = "0.5.2"
