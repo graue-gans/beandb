@@ -24,8 +24,20 @@
             <div class="beans-grid">
                 {% for bean_entry in bean_entries %}
                 <div class="beans-entry">
-                    <h4>{{ bean_entry.icon }} {{ bean_entry.title }}</h4>
-                    <p>{{ bean_entry.description }}</p>
+                    <div class="bean-photo">
+                        <!-- Placeholder for package photo -->
+                        <div class="photo-placeholder">📦</div>
+                    </div>
+                    <div class="bean-name-origin">
+                        <h4>{{ bean_entry.name }}</h4>
+                        <p class="origin">{{ bean_entry.origin }}</p>
+                    </div>
+                    <div class="bean-details">
+                        <p class="roaster">{{ bean_entry.roaster }}</p>
+                        <p class="variety">Variety: {{ bean_entry.variety }}</p>
+                        <p class="process">Process: {{ bean_entry.process }}</p>
+                        <p class="rating">Rating: {{ bean_entry.rating }}/10</p>
+                    </div>
                 </div>
                 {% endfor %}
             </div>

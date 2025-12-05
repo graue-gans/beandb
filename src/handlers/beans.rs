@@ -29,9 +29,12 @@ struct BeansAddTemplate {
 }
 
 struct BeanEntry {
-    icon: String,
-    title: String,
-    description: String,
+    name: String,
+    origin: String,
+    roaster: String,
+    variety: String,
+    process: String,
+    rating: i32,
 }
 
 #[derive(Deserialize)]
@@ -68,16 +71,22 @@ pub async fn view_beans(State(db): State<Arc<Database>>) -> Response {
 
     let bean_entries: Vec<BeanEntry> = beans
         .iter()
-        .map(|bean| BeanEntry {
-            icon: bean
-                .name
-                .chars()
-                .next()
-                .unwrap_or('?')
-                .to_string()
-                .to_uppercase(),
-            title: bean.name.clone(),
-            description: format!("{} - {} ({})", bean.roaster, bean.country, bean.roast_level),
+        .map(|bean| {
+            // Format origin as "Country, Region" or just "Country" if region is empty
+            let origin = if bean.region.is_empty() {
+                bean.country.clone()
+            } else {
+                format!("{}, {}", bean.country, bean.region)
+            };
+
+            BeanEntry {
+                name: bean.name.clone(),
+                origin,
+                roaster: bean.roaster.clone(),
+                variety: bean.variety.clone(),
+                process: bean.process.clone(),
+                rating: bean.rating,
+            }
         })
         .collect();
 
@@ -148,7 +157,7 @@ pub async fn create_bean(
     };
 
     match db.insert_bean(&bean, &brewing_method) {
-        Ok(_) => Redirect::to("/beans").into_response(),
+        Ok(_) => Redirect::to("/").into_response(),
         Err(e) => {
             eprintln!("Failed to add bean: {}", e);
             (StatusCode::INTERNAL_SERVER_ERROR, "Failed to add bean").into_response()
