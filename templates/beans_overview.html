@@ -31,12 +31,23 @@
                     <div class="bean-name-origin">
                         <h4>{{ bean_entry.name }}</h4>
                         <p class="origin">{{ bean_entry.origin }}</p>
+                        <p class="flavor-profile">
+                            {{ bean_entry.flavor_profile }}
+                        </p>
                     </div>
                     <div class="bean-details">
-                        <p class="roaster">{{ bean_entry.roaster }}</p>
-                        <p class="variety">Variety: {{ bean_entry.variety }}</p>
-                        <p class="process">Process: {{ bean_entry.process }}</p>
-                        <p class="rating">Rating: {{ bean_entry.rating }}/10</p>
+                        <div class="detail-item roaster">
+                            {{ bean_entry.roaster }}
+                        </div>
+                        <div class="detail-item variety">
+                            {{ bean_entry.variety }}
+                        </div>
+                        <div class="detail-item process">
+                            {{ bean_entry.process }}
+                        </div>
+                        <div class="detail-item rating">
+                            {{ bean_entry.rating }}/10
+                        </div>
                     </div>
                 </div>
                 {% endfor %}

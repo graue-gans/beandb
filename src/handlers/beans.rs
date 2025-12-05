@@ -31,6 +31,7 @@ struct BeansAddTemplate {
 struct BeanEntry {
     name: String,
     origin: String,
+    flavor_profile: String,
     roaster: String,
     variety: String,
     process: String,
@@ -82,6 +83,7 @@ pub async fn view_beans(State(db): State<Arc<Database>>) -> Response {
             BeanEntry {
                 name: bean.name.clone(),
                 origin,
+                flavor_profile: bean.flavor_profile.clone(),
                 roaster: bean.roaster.clone(),
                 variety: bean.variety.clone(),
                 process: bean.process.clone(),

@@ -31,10 +31,10 @@ pub struct BrewingMethod {
 }
 
 // Keep the enum if you want to use it later for validation
-#[derive(Serialize, Deserialize, Debug, Clone)]
-pub enum RoastLevel {
-    VeryLight,
-    Light,
-    Medium,
-    Dark,
-}
+// #[derive(Serialize, Deserialize, Debug, Clone)]
+// pub enum RoastLevel {
+//     VeryLight,
+//     Light,
+//     Medium,
+//     Dark,
+// }

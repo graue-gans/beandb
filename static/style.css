@@ -84,7 +84,7 @@ main {
     font-size: 4rem;
 }
 
-/* Top right - Name and Origin */
+/* Top right - Name, Origin and Flavor Profile */
 .bean-name-origin {
     grid-column: 2;
     grid-row: 1;
@@ -96,49 +96,62 @@ main {
 
 .bean-name-origin h4 {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
     line-height: 1.2;
 }
 
 .bean-name-origin .origin {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 300;
+    margin-bottom: 0.4rem;
 }
 
-/* Bottom - Details spanning both columns */
+.bean-name-origin .flavor-profile {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 0.2rem;
+}
+
+/* Bottom - Details in 2x2 grid spanning both columns */
 .bean-details {
     grid-column: 1 / 3;
     grid-row: 2;
     padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.8rem;
 }
 
-.bean-details p {
+.detail-item {
     color: white;
-    font-size: 1rem;
-    margin: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.4rem;
 }
 
-.bean-details .roaster {
+.detail-item.roaster {
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 }
 
-.bean-details .variety,
-.bean-details .process {
+.detail-item.variety,
+.detail-item.process {
     color: rgba(255, 255, 255, 0.85);
     font-weight: 300;
+    font-size: 1.4rem;
 }
 
-.bean-details .rating {
+.detail-item.rating {
     font-weight: 600;
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
+    font-size: 1.5rem;
 }
 
 .hero {
@@ -252,10 +265,23 @@ footer a:hover {
     }
 
     .bean-name-origin h4 {
+        font-size: 1.3rem;
+    }
+
+    .bean-name-origin .origin {
+        font-size: 1rem;
+    }
+
+    .bean-name-origin .flavor-profile {
+        font-size: 0.85rem;
+    }
+
+    .detail-item {
         font-size: 1.1rem;
     }
 
-    .bean-details p {
-        font-size: 0.9rem;
+    .detail-item.roaster,
+    .detail-item.rating {
+        font-size: 1.2rem;
     }
 }
