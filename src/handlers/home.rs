@@ -14,7 +14,7 @@ struct AboutTemplate {
 pub async fn about_page() -> Response {
     let template = AboutTemplate {
         title: "bean db - about".to_string(),
-        site_name: "BEANDB".to_string(),
+        site_name: "Coffee Bean Tracker".to_string(),
         tagline: "Track your specialty coffee journey".to_string(),
         footer_text: "» by max kehrer".to_string(),
     };
