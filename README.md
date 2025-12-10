@@ -1,13 +1,14 @@
 # BEANDB - wip
 
-### Roadmap / features wishlist
+### Roadmap
 - [ ] Add image integration
-- [ ] Add filtering
 - [ ] Add dockerfile
 - [ ] Add github actions: checks and deploy
 - [ ] Actually deploy
+
+### Features Wishlist
+- [ ] Add filtering
 - [ ] Get visual review from Tizi
-- [ ] Add image upload to /add page
-- [ ] Create single bean view (with delete and all details)
+- [ ] Create single bean view (with delete and view of all details)
 - [ ] Finish /about page
-- [ ] Add features to /add page
+- [ ] Add more features to /add page and visual overhaul
